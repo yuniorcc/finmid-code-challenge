@@ -1,0 +1,6 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://bank-postgres-db:5432/bank-db
+    username: postgres
+    password: postgres

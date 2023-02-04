@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+
+  bank-api:
+    image: gradle:latest
+    depends_on:
+      - bank-postgres-db
+    volumes:
+      - "${PWD}:/home/gradle/project"
+    working_dir: "/home/gradle/project"
+    ports:
+      - "8080:8080"
+
+  bank-postgres-db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: bank-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
