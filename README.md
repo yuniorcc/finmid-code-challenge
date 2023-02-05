@@ -7,6 +7,8 @@ Within the [Makefile](Makefile) you can handle the entire flow to get everything
 1. Install `make` on your computer, if you do not already have it.
 2. Start the application: `make up`
 3. Shut down the application: `make down`
+4. Run the application tests: `make test`
 
-As you could see on the [Makefile](Makefile) script and the [Docker-Compose File](docker-compose.yaml), the whole API 
-and the PostgreSQL instance are containerized with Docker.
+As you could see on the [Makefile](Makefile) script and the [Docker-Compose File](docker-compose.yaml), the whole API and the PostgreSQL instance are containerized with Docker.
+
+Go to `http://localhost:8080/swagger-ui/index.html` to see that everything is up & running!
