@@ -1,4 +1,4 @@
-package com.yunior.bank.persistance.account.entity;
+package com.yunior.bank.persistance.transaction.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,27 +8,29 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "account")
+@Table(name = "transaction")
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-public class AccountEntity {
+public class TransactionEntity {
 
     @Id
     @GeneratedValue(generator = "system-uuid")
     @GenericGenerator(name = "system-uuid", strategy = "uuid")
-    private String accountId;
-    private BigDecimal balance;
+    private String txId;
+    private BigDecimal amount;
+    private String source;
+    private String destination;
 
-    public AccountEntity(BigDecimal balance) {
-        this.balance = balance;
+    public TransactionEntity(BigDecimal amount, String source, String destination) {
+        this.amount = amount;
+        this.source = source;
+        this.destination = destination;
     }
 }
